@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio website for a software developer: projects, skills, education, and contact information." />
+  <meta name="author" content="Your Name" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon: place a favicon.ico file in the same directory as this index.html -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Open Graph (optional but useful) -->
+  <meta property="og:title" content="Your Name — Software Developer" />
+  <meta property="og:description" content="Projects, skills, education, and ways to get in touch." />
+  <meta property="og:type" content="website" />
+
+  <title>Your Name — Software Developer</title>
+  <style>
+    /* Simple, accessible base styles to make the page readable without external CSS */
+    :root { --max: 1080px; }
+    html { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.6; color: #0d1117; background: #fff; }
+    a { color: #0b5fff; }
+    header, main, footer { display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 1rem; }
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem 1rem; background: #0b5fff; color: #fff; border-radius: .5rem; }
+
+    header { background: #0d1117; color: #fff; }
+    .site-title { display: flex; align-items: center; gap: .75rem; font-weight: 700; }
+    .site-title img { width: 28px; height: 28px; }
+
+    nav[aria-label] ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #c9d1d9; font-weight: 600; }
+    nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: .25rem; }
+
+    .hero { display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 2rem 0; }
+    .hero h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); }
+    .tagline { font-size: 1.125rem; color: #4b5563; }
+
+    section { padding: 2rem 0; }
+    section h2 { margin-top: 0; font-size: 1.5rem; }
+
+    .about { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: start; }
+    .about img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+
+    .skills ul { columns: 2; gap: 2rem; padding-left: 1.2rem; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    article.project { border: 1px solid #e5e7eb; border-radius: .75rem; padding: 1rem; }
+    article.project figure { margin: 0 0 .75rem; }
+    article.project img { width: 100%; height: 160px; object-fit: cover; border-radius: .5rem; }
+    article.project h3 { margin: 0 0 .25rem; font-size: 1.125rem; }
+    .tech-list { margin: .5rem 0 0; padding-left: 1.1rem; }
+
+    .education ol { padding-left: 1.25rem; }
+
+    aside.contact-hint { background: #f8fafc; border: 1px solid #e5e7eb; padding: 1rem; border-radius: .75rem; }
+
+    footer { background: #0d1117; color: #c9d1d9; }
+    footer a { color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: .5rem; }
+
+    @media (min-width: 720px) {
+      .hero { grid-template-columns: 2fr 1fr; align-items: center; }
+      .footer-grid { grid-template-columns: 1fr auto; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <div class="wrap" role="banner">
+      <div class="site-title">
+        <!-- Simple inline logo (accessible text next to it) -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='24' fill='%230b5fff'/%3E%3Cpath d='M32 80l16-48h12l16 48h-11l-3-10H45l-3 10H32zm17-19h17l-8-26-9 26zM90 32h10v64H90z' fill='white'/%3E%3C/svg%3E" alt="Logo: stylized initials" />
+        <span>Your Name</span>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" aria-current="page">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <!-- Hero / Home Section -->
+    <section id="home" class="hero" aria-labelledby="home-heading">
+      <div>
+        <h1 id="home-heading">Your Name</h1>
+        <p class="tagline"><strong>Software Developer</strong> — Building reliable web apps with an eye for performance and accessibility.</p>
+        <p>Based in City, Country. I craft human‑friendly interfaces, robust APIs, and automated workflows.</p>
+      </div>
+      <aside class="contact-hint" aria-label="Quick contact information">
+        <p><strong>Available for freelance &amp; full‑time roles</strong>.</p>
+        <p>Prefer email first contact. Response within 24 hours.</p>
+      </aside>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23c7d2fe'/%3E%3Cstop offset='100%25' stop-color='%230b5fff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' rx='120' fill='url(%23g)'/%3E%3Ccircle cx='120' cy='96' r='40' fill='white'/%3E%3Crect x='64' y='148' width='112' height='56' rx='28' fill='white'/%3E%3C/svg%3E" alt="Professional headshot placeholder showing a circular portrait silhouette" />
+      <div>
+        <h2 id="about-heading">About</h2>
+        <p>I am a software developer with a focus on building accessible, performant web applications. I enjoy turning complex problems into intuitive experiences. Over the past few years, I have shipped production features across the stack and collaborated with cross‑functional teams. I’m passionate about clean architecture, documentation, and continuous learning.</p>
+
+        <section class="skills" aria-labelledby="skills-heading">
+          <h3 id="skills-heading">Skills</h3>
+          <ul>
+            <li>Languages: JavaScript (ES202x), TypeScript, Python</li>
+            <li>Frameworks: React, Node.js/Express</li>
+            <li>Databases: PostgreSQL, MongoDB</li>
+            <li>Testing: Jest, Playwright</li>
+            <li>DevOps: Docker, GitHub Actions</li>
+            <li>Accessibility: WCAG 2.2, ARIA practices</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <div class="projects-grid">
+        <article class="project" aria-labelledby="p1-title">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480' viewBox='0 0 800 480'%3E%3Crect width='800' height='480' fill='%23eef2ff'/%3E%3Crect x='40' y='40' width='720' height='120' rx='12' fill='%230b5fff'/%3E%3Crect x='40' y='180' width='440' height='80' rx='8' fill='%234f46e5'/%3E%3Crect x='40' y='280' width='720' height='40' rx='6' fill='%23939aff'/%3E%3C/svg%3E" alt="Screenshot placeholder of a dashboard UI with charts and cards" />
+            <figcaption>Interactive Analytics Dashboard</figcaption>
+          </figure>
+          <h3 id="p1-title">Interactive Analytics Dashboard</h3>
+          <p>Responsive dashboard for visualizing KPIs and user behavior with client‑side filtering and exportable reports.</p>
+          <h4>Technologies used</h4>
+          <ul class="tech-list">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Recharts</li>
+            <li>Node.js / Express</li>
+          </ul>
+        </article>
+
+        <article class="project" aria-labelledby="p2-title">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480' viewBox='0 0 800 480'%3E%3Crect width='800' height='480' fill='%23f1f5f9'/%3E%3Crect x='60' y='60' width='680' height='360' rx='16' fill='%231f2937'/%3E%3Crect x='80' y='260' width='200' height='40' rx='6' fill='%230b5fff'/%3E%3Crect x='300' y='260' width='200' height='40' rx='6' fill='%230b5fff'/%3E%3C/svg%3E" alt="Placeholder image of a landing page with call‑to‑action buttons" />
+            <figcaption>Marketing Landing Page A/B Tests</figcaption>
+          </figure>
+          <h3 id="p2-title">High‑Convert Landing Pages</h3>
+          <p>Built and tested multiple landing page variants, improving conversion by 18% using structured experiments and analytics.</p>
+          <h4>Technologies used</h4>
+          <ul class="tech-list">
+            <li>Next.js</li>
+            <li>React</li>
+            <li>Playwright</li>
+            <li>Vercel</li>
+          </ul>
+        </article>
+
+        <article class="project" aria-labelledby="p3-title">
+          <figure>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='480' viewBox='0 0 800 480'%3E%3Crect width='800' height='480' fill='%23ecfeff'/%3E%3Ccircle cx='160' cy='240' r='80' fill='%230b5fff'/%3E%3Ccircle cx='400' cy='240' r='80' fill='%234f46e5'/%3E%3Ccircle cx='640' cy='240' r='80' fill='%23939aff'/%3E%3C/svg%3E" alt="Placeholder image showing distributed nodes in a simple network diagram" />
+            <figcaption>Event‑Driven Microservice Demo</figcaption>
+          </figure>
+          <h3 id="p3-title">Event‑Driven Microservice Demo</h3>
+          <p>Prototype showcasing pub/sub messaging, retry strategies, and observability for a small microservice suite.</p>
+          <h4>Technologies used</h4>
+          <ul class="tech-list">
+            <li>Node.js</li>
+            <li>Kafka (or NATS)</li>
+            <li>Docker Compose</li>
+            <li>OpenTelemetry</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <ol>
+        <li>
+          <strong>B.Tech in Computer Science</strong>, Example Institute of Technology — <time datetime="2022">2022</time>
+        </li>
+        <li>
+          <strong>M.S. in Software Engineering</strong>, Sample University — <time datetime="2024">2024</time>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>For opportunities and collaborations, please reach out through any of the social links below.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap footer-grid">
+      <p>&copy; <time datetime="2025">2025</time> Your Name. All rights reserved.</p>
+      <nav aria-label="Social links">
+        <ul style="list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0;">
+          <li><a href="https://example.com/github" rel="me noopener" target="_blank">Visit my GitHub profile</a></li>
+          <li><a href="https://example.com/linkedin" rel="me noopener" target="_blank">Connect on LinkedIn</a></li>
+          <li><a href="https://example.com/twitter" rel="me noopener" target="_blank">Follow on Twitter/X</a></li>
+          <li><a href="mailto:you@example.com">Email me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
